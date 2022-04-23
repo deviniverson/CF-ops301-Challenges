@@ -5,12 +5,4 @@
 # Script:                       DateTimeLog.sh
 # Purpose:                      Copy system log and rename filename with date and time appended at the end
 
-# define date and time as variable
-now=$(date +%D_%T)
-
-# copy log file and rename it with date and time in filename
-#log={cp /var/log/system.log .}
-
-echo $now
-
-cp /var/log/system.log "syslog $(date +%D_%T)"
+cp /var/log/syslog 'syslog_$(date +%D_%T)'
