@@ -16,6 +16,7 @@ menu(){
     HelloWorld  print_HelloWorld!_on_screen
     PingSelf  pings_this_computer's_loopback_address
     IPinfo  prints_network_adapter_information
+    WhoAmI prints_username_of_current_user
     Exit  exit_from_program
     " | column -t
     echo " "
@@ -29,22 +30,27 @@ main(){
         menu
         read -p 'Name of process: ' userinput
 
-        if [ $userinput == 'HelloWorld' ] || [ $userinput == 'helloworld' ]
+        if [ $userinput == 'HelloWorld' ] || [ $userinput == 'helloworld' ] || [ $userinput == 'HELLOWORLD' ]
         then
             echo "Hello World!"
             continue
         
-        elif [ $userinput == 'PingSelf' ] || [ $userinput == 'pingself' ]
+        elif [ $userinput == 'PingSelf' ] || [ $userinput == 'pingself' ] || [ $userinput == 'PINGSELF' ]
         then
             ping 127.0.0.1 -c 5
             continue
 
-        elif [ $userinput == 'IpInfo' ] || [ $userinput == 'ipinfo' ]
+        elif [ $userinput == 'IpInfo' ] || [ $userinput == 'ipinfo' ] || [ $userinput == 'IPINFO' ]
         then
             echo "$(ifconfig)"
             continue
 
-        elif [ $userinput == 'Exit' ] || [ $userinput == 'exit' ]
+        elif [ $userinput == 'WhoAmI' ] || [ $userinput == 'whoami' ] || [ $userinput == 'WHOAMI' ]
+        then
+            echo "$(whoami)"
+            continue
+
+        elif [ $userinput == 'Exit' ] || [ $userinput == 'exit' ] || [ $userinput == 'EXIT' ]
         then
             break
 
