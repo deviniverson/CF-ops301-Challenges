@@ -18,6 +18,8 @@ cat /var/log/$file
 
 # clear log file
 truncate -s 0 /var/log/$file
+echo " "
+echo "$file Cleared!"
 
 # print cleared file
 cat /var/log/$file
