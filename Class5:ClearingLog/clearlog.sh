@@ -13,19 +13,19 @@ logfiles=("syslog" "wtmp")
 # for loop through log file names in declared list
 for file in ${logfiles[@]};
 do
-# print original log file
-cat /var/log/$file
+    # print original log file
+    cat /var/log/$file
 
-# clear log file
-truncate -s 0 /var/log/$file
-echo " "
-echo "$file Cleared!"
+    # clear log file
+    truncate -s 0 /var/log/$file
+    echo " "
+    echo "$file Cleared!"
 
-# print cleared file
-cat /var/log/$file
+    # print cleared file
+    cat /var/log/$file
 
-# create divider between iterations
-echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    # create divider between iterations
+    echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 done
 
 # How can your script be used to clear your tracks?

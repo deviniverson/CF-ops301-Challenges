@@ -10,10 +10,10 @@ import subprocess as sp
 whoami = sp.getoutput('whoami --version')
 ip_a = sp.getoutput('ip a')
 lshw = sp.getoutput('lshw -short')
-spacer = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
-print(whoami)
-print(spacer)
-print(ip_a)
-print(spacer)
-print(lshw)
+displaylist = ("whoami" "ip_a" "lshw")
+
+for d in displaylist:
+    print("Command: "+ d)
+    print(d)
+    print()
