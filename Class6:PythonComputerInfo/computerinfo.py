@@ -2,18 +2,32 @@
 # Author: Devin Iverson
 # Date of last revision: 05/2/22
 # Purpose: Print information about the computer to the screen
-# Variables: whoami, ip_a, lshw, spacer
+# Variables: whoami, ip_a, lshw
 
-import subprocess as sp
+import os
+#from subprocess import *
 
-# variables
-whoami = sp.getoutput('whoami --version')
-ip_a = sp.getoutput('ip a')
-lshw = sp.getoutput('lshw -short')
+paywall = 0
 
-displaylist = ("whoami" "ip_a" "lshw")
+for i in range(5):
+    print("Main Menu")
+    user = input("Are you a Paying customer or not?")
+    #lower_user = user.casefold()
+    if user == "yes":
+        print("\n")
+        paywall += 1
+        break
+    else:
+        print("It's never to late to become one!   ")
+        print("\n")
 
-for d in displaylist:
-    print("Command: "+ d)
-    print(d)
-    print()
+if paywall == 1:
+    #whoami = call("whoami", shell=True)
+    who = os.system("whoami")
+    print(who)
+    ip = os.system(["ip a"])
+    print(ip)
+    lshw = os.system(["lshw -short"])
+    print(lshw)
+else:
+    pass
