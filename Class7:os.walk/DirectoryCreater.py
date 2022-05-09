@@ -16,8 +16,8 @@ input = input("Enter directory: ")
 # Declaration of functions
 
 ### Declare a function here
-def file_paths(input):
-    for (root, dirs, files) in os.walk(input):
+def file_paths(folder):
+    for (root, dirs, files) in os.walk(folder):
         ### Add a print command here to print ==root==
         print(root)
         ### Add a print command here to print ==dirs==
@@ -28,5 +28,5 @@ def file_paths(input):
 # Main
 
 ### Pass the variable into the function here
-
+file_paths(input)
 # End
