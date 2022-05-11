@@ -24,6 +24,7 @@ def file_paths(folder):
         print(dirs)
         ### Add a print command here to print ==files==
         print(files)
+        print('-----------------------------------')
 
 # Main
 
