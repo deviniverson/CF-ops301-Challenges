@@ -7,11 +7,9 @@
 import psutil
 
 # 
-cpu_times = psutil.cpu_times(percpu=True)
-print(cpu_times)
-#print(psutil.cpu_times(percpu=True))
-# ctx_switches: # of context switches, interrupts: # of interrupts, soft_interrupts: # of software interrupts
-cpu_stats = psutil.cpu_stats()
+cpu_times = psutil.cpu_times()
+
+#print(cpu_times)
 
 # print time spent by normal processes executing
 print("CPU time spent by normal processes: ", cpu_times[0])
@@ -26,19 +24,19 @@ print("CPU time spent with system is idle: ", cpu_times[3])
 print("CPU time spent by priority processes: ", cpu_times[1])
 
 # print time spent waiting for I/O to complete
-"CPU time spent waiting for I/O to complete: ", 
+print("CPU time spent waiting for I/O to complete: ", cpu_times[4]) 
 
 # print time spent for servicing hardware interrupts
-"CPU time spent for servicing hardare interrupts: ", 
+print("CPU time spent for servicing hardare interrupts: ", cpu_times[5])
 
 # print time spent for servicing software interrupts
-"CPU time spent for servicing software interrupts: ", 
+print("CPU time spent for servicing software interrupts: ", cpu_times[6])
 
 # print time spent by other operating systems running in a virtualized environment
-"CPU time spent for other operating systems running in a virtualized environment: ", 
+print("CPU time spent for other operating systems running in a virtualized environment: ", cpu_times[7])
 
 # print time spent running a virtual CPU for guest operating systems under the control of the Linux kernel
-"CPU time spent running a virtual CPU for guest operating systems under the Linux kernel: ", 
+print("CPU time spent running a virtual CPU for guest operating systems under the Linux kernel: ", cpu_times[8])
 
 # Stretch Goals
 
